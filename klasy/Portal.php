@@ -1,4 +1,5 @@
 <?php
+
 class Portal
 {
   private $dbo = null;

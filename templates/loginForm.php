@@ -1,4 +1,5 @@
-<?php if (!isset($portal)) die(); ?>
+<?php 
+if (!isset($portal)) die(); ?>
 <div id="loginFormWrapper" class="forms">
   <form action="index.php?action=login" method="post">
     <table>

@@ -110,7 +110,10 @@ class PortalFront extends Portal
             if (isset($_GET['tytul']) && $_GET['tytul'] != '') { 
               // Tu lub po przefiltrowaniu dodatkowa weryfikacja poprawności parametru 
               $autor = filter_input(INPUT_GET, 'tytul', FILTER_SANITIZE_SPECIAL_CHARS); 
-              $cond2 = " AND k.`Tytul` LIKE '%" . $tytul . "%' "; } else { $cond2 = ''; 
+              $cond2 = " AND k.`Tytul` LIKE '%" . $tytul . "%' "; 
+            } 
+              else { 
+                $cond2 = ''; 
               } 
               
               // Formowanie zapytania 
@@ -122,7 +125,7 @@ class PortalFront extends Portal
               elseif ($result->num_rows < 1) 
               $komunikat = 'Brak książek spełniających podane kryteria.'; 
               // Wyświetlenie rezultatów wyszukiwania 
-              include 'templates/searchResult.php'; 
+              include 'templates/searchResults.php'; 
             }
             function showBookDetails() { 
               // Sprawdzenie poprawności identyfikatora książki (parametr id) 
